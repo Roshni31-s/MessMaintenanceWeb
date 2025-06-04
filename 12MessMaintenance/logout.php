@@ -1,9 +1,8 @@
-<?php
-	session_start();
-	// Destroying All Sessions
-	if(session_destroy())
-	{
-	// Redirecting To Home Page
-	header("Location: login.php");
-	}
-	?>
+?php
+// logout.php
+session_start();
+session_unset(); // Unset all session variables
+session_destroy(); // Destroy the session
+header("Location: login.php"); // Redirect to login page
+exit();
+?>

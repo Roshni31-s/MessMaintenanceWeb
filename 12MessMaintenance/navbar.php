@@ -1,5 +1,5 @@
 <?php
-// Secure session start with appropriate settings
+// This must be the VERY FIRST thing in the file, before any HTML or whitespace
 if (session_status() === PHP_SESSION_NONE) {
     session_set_cookie_params([
         'lifetime' => 86400, // 1 day
@@ -13,7 +13,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_regenerate_id(true); // Prevent session fixation
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
